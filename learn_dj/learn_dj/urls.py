@@ -20,6 +20,7 @@ from learn_dj import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.homePage),
     path('about-us/', views.aboutUs),
     path('course/', views.course),
     path('course/<int:courseid>', views.courseDetailsInt),
