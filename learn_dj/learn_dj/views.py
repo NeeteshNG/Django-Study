@@ -1,4 +1,16 @@
 from django.http import HttpResponse
 
 def aboutUs(request):
-    return HttpResponse("Welcome to the Django.")
+    return HttpResponse("<h1>Welcome to the Django.</h1>")
+
+def course(request):
+    return HttpResponse("<h1>This is the Course View.</h1>")
+
+def courseDetailsInt(request, courseid):
+    return HttpResponse(f"<b>The url on the Course (int) : {courseid}.<b>")
+
+def courseDetailsStr(request, coursestr):
+    return HttpResponse(f"<b>The url on the Course (str) : {coursestr}.<b>")
+
+def courseDetailsSlug(request, courseslug):
+    return HttpResponse(f"<b>The url on the Course (slug) : {courseslug}.<b>")
