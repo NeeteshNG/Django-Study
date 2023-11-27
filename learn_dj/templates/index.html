@@ -1,5 +1,7 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
+  {% block content %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +9,6 @@
     <title>{{title}}</title>
   </head>
   <body>
-    {% include "header.html" %}
     <h1>Using For Loop :</h1>
     {% for n in clist %}
     <div id="list_lang">{{forloop.counter}} --> {{n}}</div>
@@ -46,4 +47,5 @@
 
       <br>
   </body>
+  {% endblock %}
 </html>
