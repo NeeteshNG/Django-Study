@@ -1,0 +1,23 @@
+.body{
+  display: flex;
+  align-items: center;
+  margin-left: 450px;
+}
+
+ul {
+  background-color: gray;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  color: rgb(157, 255, 255);
+  display: block;
+  padding: 8px;
+}

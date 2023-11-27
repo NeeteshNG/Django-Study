@@ -7,6 +7,7 @@
     <title>{{title}}</title>
   </head>
   <body>
+    {% include "header.html" %}
     <h1>Using For Loop :</h1>
     {% for n in clist %}
     <div id="list_lang">{{forloop.counter}} --> {{n}}</div>
