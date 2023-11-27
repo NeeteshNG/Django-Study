@@ -21,6 +21,18 @@ def aboutUs(request):
 def contact(request):
     return render(request, "contact.html")
 
+def user(request):
+    fname = ""
+    lname = ""
+    try:
+        f_name = request.GET.get('fname')
+        l_name = request.GET.get('lname')
+        fname += f_name
+        lname += l_name
+    except:
+        pass
+    return render(request, "userForm.html", {'fname' : fname, 'lname' : lname})
+
 def course(request):
     return HttpResponse("<h1>This is the Course View.</h1>")
 
