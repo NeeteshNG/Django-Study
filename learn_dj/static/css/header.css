@@ -5,7 +5,7 @@
 }
 
 ul {
-  background-color: gray;
+  background-color: black;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ li {
 }
 
 li a {
-  color: rgb(157, 255, 255);
+  color: white;
   display: block;
   padding: 8px;
 }

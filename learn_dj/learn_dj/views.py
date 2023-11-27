@@ -16,7 +16,7 @@ def homePage(request):
     return render(request, "index.html", data)
 
 def aboutUs(request):
-    return HttpResponse("<h1>Welcome to the Django.</h1>")
+    return render(request, "about.html")
 
 def course(request):
     return HttpResponse("<h1>This is the Course View.</h1>")
