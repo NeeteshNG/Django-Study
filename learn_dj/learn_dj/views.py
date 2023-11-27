@@ -18,6 +18,9 @@ def homePage(request):
 def aboutUs(request):
     return render(request, "about.html")
 
+def contact(request):
+    return render(request, "contact.html")
+
 def course(request):
     return HttpResponse("<h1>This is the Course View.</h1>")
 

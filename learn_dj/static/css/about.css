@@ -27,7 +27,8 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
+  margin-top: 20px;
+  background-color: black;
   color: white;
 }
 
