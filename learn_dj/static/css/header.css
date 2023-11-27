@@ -1,11 +1,13 @@
 .body{
   display: flex;
   align-items: center;
-  margin-left: 450px;
 }
 
 ul {
+  display: flex;
+  justify-content: space-evenly;
   background-color: black;
+  width: 100%;
   list-style-type: none;
   margin: 0;
   padding: 0;
