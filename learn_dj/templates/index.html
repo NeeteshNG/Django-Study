@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
-</head>
-<body>
-    <h1 style="color:blue; background-color:magenta;">{{bdata}}</h1>
-</body>
+  </head>
+  <body>
+    {% for n in clist %}
+    <div id="list_lang">{{forloop.counter}} --> {{n}}</div>
+    {% endfor %}
+    <br>
+    <table border="1" cellpadding="10px">
+        <tr>
+          <th>Name</th>
+          <th>Phone No.</th>
+        </tr>
+
+        {% for d in student_details %}
+        <tr>
+          <td>{{d.name}}</td>
+          <td>{{d.phone}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </body>
 </html>

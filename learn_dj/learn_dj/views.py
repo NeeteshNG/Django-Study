@@ -4,7 +4,13 @@ from django.shortcuts import render
 def homePage(request):
     data = {
         'title' : 'Django Test',
-        'bdata' : 'Welcome to the Django Testing.'
+        'bdata' : 'Welcome to the Django Testing.',
+        'clist' : [ 'PHP', 'Java', 'Django', 'Python' ],
+        'student_details' : [
+            { 'name' : 'Rohit', 'phone' : 9878754266},
+            { 'name' : 'Deepak', 'phone' : 9878754244},
+            { 'name' : 'Kapil', 'phone' : 9878754222}
+        ] 
     }
     return render(request, "index.html", data)
 
