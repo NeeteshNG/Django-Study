@@ -3,15 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/main.css">
     <title>{{title}}</title>
   </head>
   <body>
+    <h1>Using For Loop :</h1>
     {% for n in clist %}
     <div id="list_lang">{{forloop.counter}} --> {{n}}</div>
     {% endfor %}
 
     <br>
 
+    <h1>Using For Loop in Table :</h1>
     <table border="1" cellpadding="10px">
         <tr>
           <th>Name</th>
@@ -19,26 +22,27 @@
         </tr>
 
         {% for d in student_details %}
-        <tr>
-          <td>{{d.name}}</td>
-          <td>{{d.phone}}</td>
-        </tr>
+          <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.phone}}</td>
+          </tr>
         {% endfor %}
 
-        <br>
+      </table>
+      <br>
 
-        {% if numbers|length > 0 %}
-          {% for n in numbers %}
-            {% if n > 20 %}
-              <h3>{{n}}</h3>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <h3>No Data Found</h3>
-          <br>
-        {% endif %}
-
+      <h1>Using If Else :</h1>
+      {% if numbers|length > 0 %}
+        {% for n in numbers %}
+          {% if n > 20 %}
+            <h3>{{n}}</h3>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        <h3>No Data Found</h3>
         <br>
-    </table>
+      {% endif %}
+
+      <br>
   </body>
 </html>
