@@ -21,3 +21,8 @@ li a {
   display: block;
   padding: 8px;
 }
+
+.active a{
+  color: black;
+  background-color: gray;
+}
