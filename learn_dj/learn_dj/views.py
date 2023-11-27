@@ -6,6 +6,7 @@ def homePage(request):
         'title' : 'Django Test',
         'bdata' : 'Welcome to the Django Testing.',
         'clist' : [ 'PHP', 'Java', 'Django', 'Python' ],
+        'numbers' : [10,20,30,40,50,60,70],
         'student_details' : [
             { 'name' : 'Rohit', 'phone' : 9878754266},
             { 'name' : 'Deepak', 'phone' : 9878754244},
