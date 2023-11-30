@@ -15,6 +15,9 @@ def homePage(request):
     }
     return render(request, "index.html", data)
 
+def submitForm(request):
+    return HttpResponse(request)
+
 def aboutUs(request):
     if request.method=="GET":
         name=request.GET.get('name')
