@@ -12,10 +12,12 @@
 
       <form method="post">
         {% csrf_token %}
-        <label for="fname">First name:</label><br />
+        {{form}}
+        {% comment %} <label for="fname">First name:</label><br />
         <input type="text" id="fname" name="fname" placeholder="John" /><br />
         <label for="lname">Last name:</label><br />
-        <input type="text" id="lname" name="lname" placeholder="Doe" />
+        <input type="text" id="lname" name="lname" placeholder="Doe" /> {% endcomment %}
+
 
         <div class="button-container">
           <button class="button-27" type="submit">Save</button>

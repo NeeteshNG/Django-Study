@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from .forms import usersForm
 
 def homePage(request):
     data = {
@@ -24,12 +25,14 @@ def contact(request):
     return render(request, "contact.html")
 
 def user(request):
-    data = {}
+    fn = usersForm()
+    data = {'form' : fn}
     try:
         if request.method=="POST":
             fname = request.POST.get('fname')
             lname = request.POST.get('lname')
             data={
+                'form' : fn,
                 'fname' : fname, 
                 'lname' : lname,
                 'name' : fname + " " + lname
