@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 def homePage(request):
@@ -16,7 +16,9 @@ def homePage(request):
     return render(request, "index.html", data)
 
 def aboutUs(request):
-    return render(request, "about.html")
+    if request.method=="GET":
+        name=request.GET.get('name')
+    return render(request, "about.html", {"name" : name})
 
 def contact(request):
     return render(request, "contact.html")
@@ -32,6 +34,9 @@ def user(request):
                 'lname' : lname,
                 'name' : fname + " " + lname
             }
+            url='/about-us/?name={}'.format(fname + " " + lname)
+
+            return HttpResponseRedirect(url)
     except:
         pass
     return render(request, "userForm.html", data)
