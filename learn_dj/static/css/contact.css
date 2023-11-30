@@ -20,7 +20,7 @@ textarea {
     resize: vertical;
 }
 
-input[type=submit] {
+.contact-button[type=submit] {
     background-color: black;
     color: white;
     padding: 12px 20px;
@@ -29,7 +29,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+.contact-button[type=submit]:hover {
     background-color: gray;
 }
 

@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.calculator-body{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}

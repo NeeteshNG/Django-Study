@@ -24,6 +24,9 @@ def aboutUs(request):
 def contact(request):
     return render(request, "contact.html")
 
+def calculator(request):
+    return render(request, "calculator.html")
+
 def user(request):
     fn = usersForm()
     data = {'form' : fn}
