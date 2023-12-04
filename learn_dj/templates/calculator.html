@@ -9,6 +9,24 @@
   <body>
     <div class="calculator-body">
       <h1 class="text-calci">CALCULATOR</h1>
+      <form method="post" class="form-body">
+        {% csrf_token %}
+        <label>Value 1 :</label>
+        <input type="text" name="num1" />
+        <select name="opr">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="/">/</option>
+          <option value="*">*</option>
+        </select>
+        <label>Value 2 :</label>
+        <input type="text" name="num2" />
+        <div class="button-container">
+          <button type="submit" class="button-89">Calculate</button>
+        </div>
+        <label class="output">Output :</label>
+        <input class="output-box" type="text"/>
+      </form>
     </div>
     {% endblock %}
   </body>
