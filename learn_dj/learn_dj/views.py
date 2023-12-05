@@ -26,6 +26,7 @@ def contact(request):
 
 def calculator(request):
     c=''
+    o_e = ''
     try:
         if request.method=="POST":
             n1=eval(request.POST.get("num1"))
@@ -39,9 +40,14 @@ def calculator(request):
                 c = n1 * n2
             elif opr=="/":
                 c = n1 / n2
+            
+            if c%2==0:
+                o_e = 'EVEN'
+            else:
+                o_e = 'ODD'
     except:
         c="Invalid Operations."
-    return render(request, "calculator.html", {'calculation': c})
+    return render(request, "calculator.html", {'calculation': c, 'odd_even' : o_e})
 
 def user(request):
     fn = usersForm()

@@ -89,4 +89,9 @@ select {
     font-size: 30px;
     text-align: center;
     font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.odd_even{
+    align-self: center;
 }
