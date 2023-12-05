@@ -1,6 +1,7 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .forms import usersForm
+import math
 
 def homePage(request):
     data = {
@@ -25,6 +26,34 @@ def contact(request):
     return render(request, "contact.html")
 
 def marksheet(request):
+    if request.method=="POST":
+        s1=eval(request.POST.get('sub1'))
+        s2=eval(request.POST.get('sub2'))
+        s3=eval(request.POST.get('sub3'))
+        s4=eval(request.POST.get('sub4'))
+        s5=eval(request.POST.get('sub5'))
+        s6=eval(request.POST.get('sub6'))
+
+        t = s1 + s2 + s3 + s4 + s5 + s6
+
+        p = t * 100 / 600
+
+        if p>=60:
+            d="First Division"
+        elif p>=48:
+            d="Second Division"
+        elif p>=35:
+            d="Third Division"
+        else:
+            d="Fail"
+
+        data = {
+            'subjects' : [s1, s2, s3, s4, s5, s6],
+            'total' : t,
+            'percentage' : math.floor(p),
+            'division' : d
+        }
+        return render(request, "marksheet.html", data)
     return render(request, "marksheet.html")
 
 def calculator(request):
