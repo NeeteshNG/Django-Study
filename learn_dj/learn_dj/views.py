@@ -27,12 +27,27 @@ def contact(request):
 
 def marksheet(request):
     if request.method=="POST":
+        if request.POST.get('sub1') == "":
+            return render(request, "marksheet.html", {'error1' : True})
+        if request.POST.get('sub2') == "":
+            return render(request, "marksheet.html", {'error2' : True})
+        if request.POST.get('sub3') == "":
+            return render(request, "marksheet.html", {'error3' : True})
+        if request.POST.get('sub4') == "":
+            return render(request, "marksheet.html", {'error4' : True})
+        if request.POST.get('sub5') == "":
+            return render(request, "marksheet.html", {'error5' : True})
+        if request.POST.get('sub6') == "":
+            return render(request, "marksheet.html", {'error6' : True})   
+        
+             
         s1=eval(request.POST.get('sub1'))
         s2=eval(request.POST.get('sub2'))
         s3=eval(request.POST.get('sub3'))
         s4=eval(request.POST.get('sub4'))
         s5=eval(request.POST.get('sub5'))
         s6=eval(request.POST.get('sub6'))
+
 
         t = s1 + s2 + s3 + s4 + s5 + s6
 

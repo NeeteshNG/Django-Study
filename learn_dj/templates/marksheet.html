@@ -9,6 +9,73 @@
   <body>
     <div class="marksheet-body">
       <h1 class="text-marksheet">MARK SHEET</h1>
+
+      {% if error1 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
+      {% if error2 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
+      {% if error3 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
+      {% if error4 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
+      {% if error5 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
+      {% if error6 %}
+      <div class="alert">
+        <span
+          class="closebtn"
+          onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <strong>Error!</strong> You have not Filled All the Details
+      </div>
+      {% endif %}
+
       <form method="post">
         {% csrf_token %}
         <div class="subjects-body">
