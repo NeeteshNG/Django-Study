@@ -24,6 +24,9 @@ def aboutUs(request):
 def contact(request):
     return render(request, "contact.html")
 
+def marksheet(request):
+    return render(request, "marksheet.html")
+
 def calculator(request):
     c=''
     o_e = ''

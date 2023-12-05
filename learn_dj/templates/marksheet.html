@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% block content %}
+    <link rel="stylesheet" href="/static/css/marksheet.css" />
+  </head>
+  <body>
+    <div class="marksheet-body">
+      <h1 class="text-marksheet">MARK SHEET</h1>
+      <div class="subjects-body">
+        <label>Subject - 1 :</label>
+        <input type="text" name="sub1" />
+        <label>Subject - 2 :</label>
+        <input type="text" name="sub2" />
+        <label>Subject - 3 :</label>
+        <input type="text" name="sub3" />
+        <label>Subject - 4 :</label>
+        <input type="text" name="sub4" />
+        <label>Subject - 5 :</label>
+        <input type="text" name="sub5" />
+        <label>Subject - 6 :</label>
+        <input type="text" name="sub6" />
+      </div>
+      <button class="button-31">Calculate</button>
+      <div class="total-body">
+        <label>Total :</label>
+        <input type="text" name="total" />
+        <label>Percentage :</label>
+        <input type="text" name="percent" />
+        <label>Division :</label>
+        <input type="text" name="division" />
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
