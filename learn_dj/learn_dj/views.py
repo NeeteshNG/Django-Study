@@ -3,8 +3,11 @@ from django.shortcuts import render
 from .forms import usersForm
 import math
 from service.models import Service
+from news.models import News
 
 def homePage(request):
+    news_data=News.objects.all()
+
     data = {
         'title' : 'Django Test',
         'bdata' : 'Welcome to the Django Testing.',
@@ -14,7 +17,8 @@ def homePage(request):
             { 'name' : 'Rohit', 'phone' : 9878754266},
             { 'name' : 'Deepak', 'phone' : 9878754244},
             { 'name' : 'Kapil', 'phone' : 9878754222}
-        ] 
+        ],
+        'news_data' : news_data
     }
     return render(request, "index.html", data)
 

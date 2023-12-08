@@ -10,6 +10,14 @@
   </head>
   <body>
     <div class="main-body">
+      <h1>News :</h1>
+
+      <marquee>
+        {% for news in news_data %}
+          <a href="">{{news.news_title}}</a> &nbsp;&nbsp;&nbsp;
+        {% endfor %}
+      </marquee>
+
       <h1>Using For Loop :</h1>
       {% for n in clist %}
       <div id="list_lang">{{forloop.counter}} --> {{n}}</div>
