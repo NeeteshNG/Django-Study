@@ -29,10 +29,14 @@
         <div class="pagination">
           {% if service_data.has_previous %}
           <a href="/about-us/?page=1">First</a>
-          <a href="/about-us/?page={{service_data.previous_page_number}}" tabindex="-1">&laquo;</a>
+          <a href="/about-us/?page={{service_data.previous_page_number}}" tabindex="-1">Previous</a>
           {% endif %}
+          {% for n in totalpagelist %}
+          <a href="/about-us/?page={{n}}">{{n}}</a>
+          {% endfor %}
           {% if service_data.has_next %}
-          <a href="/about-us/?page={{service_data.next_page_number}}">&raquo;</a>
+          <a href="/about-us/?page={{service_data.next_page_number}}">Next</a>
+          <a href="/about-us/?page={{last_page}}">Last</a>
           {% endif %}
         </div>
       </div>

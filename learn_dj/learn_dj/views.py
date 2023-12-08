@@ -30,6 +30,7 @@ def aboutUs(request):
     paginator=Paginator(service_data, 2)
     page_number = request.GET.get('page')
     service_data_final=paginator.get_page(page_number)
+    totalpage=service_data_final.paginator.num_pages
 
     if request.method=="GET":
         st=request.GET.get('servicename')
@@ -37,7 +38,9 @@ def aboutUs(request):
             service_data = Service.objects.filter(service_name__icontains=st)
 
     data={
-        'service_data' : service_data_final
+        'service_data' : service_data_final,
+        'last_page' : totalpage,
+        'totalpagelist' : [n+1 for n in range(totalpage)]
     }
 
     if request.method=="GET":
