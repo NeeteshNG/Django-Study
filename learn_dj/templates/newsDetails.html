@@ -8,8 +8,10 @@
   </head>
   <body>
     <div class="news-body">
-      <h1 class="text-news">News</h1>
-      
+      <h1 class="text-title">{{newsDetails.news_title}}</h1>
+      <div class="desc-box">
+        <p class="news-desc">{{newsDetails.news_desc | safe}}</p>
+      </div>
     </div>
     {% endblock %}
   </body>

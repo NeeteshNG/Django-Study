@@ -107,8 +107,13 @@ def calculator(request):
         c="Invalid Operations."
     return render(request, "calculator.html", {'calculation': c, 'odd_even' : o_e})
 
-def newsDetails(request):
-    return render(request, "newsDetails.html")
+def newsDetails(request, newsid):
+    newsDetails=News.objects.get(id=newsid)
+
+    data={
+        'newsDetails' : newsDetails
+    }
+    return render(request, "newsDetails.html", data)
 
 def user(request):
     fn = usersForm()
