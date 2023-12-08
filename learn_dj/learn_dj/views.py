@@ -25,6 +25,12 @@ def homePage(request):
 def aboutUs(request):
     service_data = Service.objects.all().order_by('-service_name')[:3]
     # - is used to order the data for descending order
+
+    if request.method=="GET":
+        st=request.GET.get('servicename')
+        if st!=None:
+            service_data = Service.objects.filter(service_name__icontains=st)
+
     data={
         'service_data' : service_data
     }

@@ -19,18 +19,27 @@
 
     <h2 style="text-align: center">Our Team</h2>
     <div class="row">
+      <div class="search-box">
+        <form method="get">
+          <input type="text" name="servicename" value=""/>
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+
       {% for n in service_data %}
       <div class="column">
         <div class="card">
           <div class="container">
             <h2>{{n.service_name}}</h2>
             <p class="title">{{n.service_title | upper}}</p>
-            <p>{{n.service_desc | safe}}</p>
+            <p class="desc">{{n.service_desc | safe}}</p>
             <p>[Length : {{n.service_desc | length}}]</p>
             <p><button class="button">Contact</button></p>
           </div>
         </div>
       </div>
+      {% empty %}
+      <h1 class="no-data">NO DATA FOUND</h1>
       {% endfor %}
     </div>
     {% endblock %}
