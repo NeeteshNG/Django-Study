@@ -24,8 +24,9 @@
         <div class="card">
           <div class="container">
             <h2>{{n.service_name}}</h2>
-            <p class="title">{{n.service_title}}</p>
-            <p>{{n.service_desc}}</p>
+            <p class="title">{{n.service_title | upper}}</p>
+            <p>{{n.service_desc | safe}}</p>
+            <p>[Length : {{n.service_desc | length}}]</p>
             <p><button class="button">Contact</button></p>
           </div>
         </div>
