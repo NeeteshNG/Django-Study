@@ -19,8 +19,8 @@ def homePage(request):
     return render(request, "index.html", data)
 
 def aboutUs(request):
-    service_data = Service.objects.all()
-
+    service_data = Service.objects.all().order_by('-service_name')
+    # - is used to order the data for descending order
     data={
         'service_data' : service_data
     }
