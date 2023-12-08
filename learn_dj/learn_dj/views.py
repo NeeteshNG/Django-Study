@@ -113,8 +113,8 @@ def calculator(request):
         c="Invalid Operations."
     return render(request, "calculator.html", {'calculation': c, 'odd_even' : o_e})
 
-def newsDetails(request, newsid):
-    newsDetails=News.objects.get(id=newsid)
+def newsDetails(request, slug):
+    newsDetails=News.objects.get(news_slug=slug)
 
     data={
         'newsDetails' : newsDetails
