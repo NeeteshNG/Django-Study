@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .forms import usersForm
 import math
+from service.models import Service
 
 def homePage(request):
     data = {
@@ -18,9 +19,15 @@ def homePage(request):
     return render(request, "index.html", data)
 
 def aboutUs(request):
+    service_data = Service.objects.all()
+
+    data={
+        'service_data' : service_data
+    }
+
     if request.method=="GET":
         name=request.GET.get('name')
-    return render(request, "about.html", {"name" : name})
+    return render(request, "about.html", data)
 
 def contact(request):
     return render(request, "contact.html")
