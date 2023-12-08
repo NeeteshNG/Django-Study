@@ -10,9 +10,9 @@
   </head>
   <body>
     <div class="main-body">
-      <h1>News :</h1>
+      <h1 class="news-title">News</h1>
 
-      <marquee>
+      <marquee onmouseover="stop()" onmouseout="start()">
         {% for news in news_data %}
           <a href="">{{news.news_title}}</a> &nbsp;&nbsp;&nbsp;
         {% endfor %}

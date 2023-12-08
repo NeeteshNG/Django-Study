@@ -14,3 +14,14 @@ h1{
     background-color: black;
     color: white;
 }
+
+.news-title{
+    align-self: center;
+    color: black;
+    background: none;
+}
+
+marquee a{
+    color: black;
+    font-weight: 600;
+}
