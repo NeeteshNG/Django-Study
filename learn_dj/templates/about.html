@@ -21,11 +21,21 @@
     <div class="row">
       <div class="search-box">
         <form method="get">
-          <input type="text" name="servicename" value=""/>
+          <input type="text" name="servicename" value="" />
           <input type="submit" value="Search" />
         </form>
       </div>
-
+      <div class="center">
+        <div class="pagination">
+          {% if service_data.has_previous %}
+          <a href="/about-us/?page=1">First</a>
+          <a href="/about-us/?page={{service_data.previous_page_number}}" tabindex="-1">&laquo;</a>
+          {% endif %}
+          {% if service_data.has_next %}
+          <a href="/about-us/?page={{service_data.next_page_number}}">&raquo;</a>
+          {% endif %}
+        </div>
+      </div>
       {% for n in service_data %}
       <div class="column">
         <div class="card">

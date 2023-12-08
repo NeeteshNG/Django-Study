@@ -4,6 +4,7 @@ from .forms import usersForm
 import math
 from service.models import Service
 from news.models import News
+from django.core.paginator import Paginator
 
 def homePage(request):
     news_data=News.objects.all()
@@ -23,8 +24,12 @@ def homePage(request):
     return render(request, "index.html", data)
 
 def aboutUs(request):
-    service_data = Service.objects.all().order_by('-service_name')[:3]
+    service_data = Service.objects.all().order_by('-service_name')
     # - is used to order the data for descending order
+
+    paginator=Paginator(service_data, 2)
+    page_number = request.GET.get('page')
+    service_data_final=paginator.get_page(page_number)
 
     if request.method=="GET":
         st=request.GET.get('servicename')
@@ -32,7 +37,7 @@ def aboutUs(request):
             service_data = Service.objects.filter(service_name__icontains=st)
 
     data={
-        'service_data' : service_data
+        'service_data' : service_data_final
     }
 
     if request.method=="GET":
