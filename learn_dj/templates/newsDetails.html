@@ -9,6 +9,11 @@
   <body>
     <div class="news-body">
       <h1 class="text-title">{{newsDetails.news_title}}</h1>
+      <div class="image-box">
+        {% if newsDetails.news_image != NULL %}
+        <img src="/media/{{newsDetails.news_image}}" />
+        {% endif %}
+      </div>
       <div class="desc-box">
         <p class="news-desc">{{newsDetails.news_desc | safe}}</p>
       </div>
