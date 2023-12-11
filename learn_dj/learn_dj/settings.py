@@ -133,3 +133,13 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = BASE_DIR /"media"
 
 MEDIA_URL = "/media/"
+
+EMAIL_HOST="smtp.gmail.com"
+
+EMAIL_PORT=587
+
+EMAIL_HOST_USER="djangotest014@gmail.com"
+
+EMAIL_HOST_PASSWORD="dng.roman.321"
+
+EMAIL_USE_TLS=True

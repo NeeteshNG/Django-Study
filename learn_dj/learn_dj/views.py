@@ -6,6 +6,7 @@ from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
 from contact.models import Contact
+from django.core.mail import send_mail
 
 def homePage(request):
     news_data=News.objects.all()
@@ -49,6 +50,13 @@ def aboutUs(request):
     return render(request, "about.html", data)
 
 def contact(request):
+    send_mail(
+        'Testing Mail',
+        'This is the test message.',
+        'djangotest014@gmail.com',
+        ['neeteshng15@gmail.com'],
+        fail_silently=True
+    )
     if request.method=="POST":
         fname=request.POST.get('firstname')
         lname=request.POST.get('lastname')
@@ -58,8 +66,7 @@ def contact(request):
 
         contactData.save()
 
-        n = "Message Sent."
-    return render(request, "contact.html", {'n' : n})
+    return render(request, "contact.html")
 
 def marksheet(request):
     if request.method=="POST":
