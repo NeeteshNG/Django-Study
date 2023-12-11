@@ -6,7 +6,7 @@ from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
 from contact.models import Contact
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 
 def homePage(request):
     news_data=News.objects.all()
@@ -50,13 +50,21 @@ def aboutUs(request):
     return render(request, "about.html", data)
 
 def contact(request):
-    send_mail(
-        'Testing Mail',
-        'This is the test message.',
-        'djangotest014@gmail.com',
-        ['neeteshng15@gmail.com'],
-        fail_silently=True
-    )
+    # subject = 'Testing Mail'
+    # from_email = 'djangotest014@gmail.com'
+    # msg = 'This is Test Message.'
+    # to_mail = 'neeteshng15@gmail.com'
+    # msg = EmailMultiAlternatives(subject, msg, from_email, [to_mail])
+    # msg.content_subtype='html'
+    # msg.send()
+    
+    # send_mail(
+    #     'Testing Mail',
+    #     'This is the test message.',
+    #     'djangotest014@gmail.com',
+    #     ['neeteshng15@gmail.com'],
+    #     fail_silently=True
+    # )
     if request.method=="POST":
         fname=request.POST.get('firstname')
         lname=request.POST.get('lastname')
