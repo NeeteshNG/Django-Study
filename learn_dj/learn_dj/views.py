@@ -5,6 +5,7 @@ import math
 from service.models import Service
 from news.models import News
 from django.core.paginator import Paginator
+from contact.models import Contact
 
 def homePage(request):
     news_data=News.objects.all()
@@ -48,7 +49,17 @@ def aboutUs(request):
     return render(request, "about.html", data)
 
 def contact(request):
-    return render(request, "contact.html")
+    if request.method=="POST":
+        fname=request.POST.get('firstname')
+        lname=request.POST.get('lastname')
+        subject=request.POST.get('subject')
+
+        contactData=Contact(first_name=fname, last_name=lname, subject=subject)
+
+        contactData.save()
+
+        n = "Message Sent."
+    return render(request, "contact.html", {'n' : n})
 
 def marksheet(request):
     if request.method=="POST":
